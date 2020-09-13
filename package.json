@@ -1,0 +1,50 @@
+{
+  "name": "dashlane-json-to-csv",
+  "version": "0.1.0",
+  "description": "Converts JSON data exported from Dashlane into a usable, well-formatted CSV file for other applications.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "compile": "tsc --declaration",
+    "lint": "tslint --project tsconfig.json",
+    "prepublish": "npm run compile",
+    "test": "mocha",
+    "coverage": "nyc -r text -e .ts -x \"tests/*.spec.ts\" npm run test"
+  },
+  "directories": {
+    "lib": "./lib",
+    "src": "./src",
+    "test": "./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahjuice/dashlane-json-to-csv.git"
+  },
+  "author": "Christopher J. Agius <ahjuice@users.noreply.github.com> (https://chrisagi.us/)",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/ahjuice/dashlane-json-to-csv/issues"
+  },
+  "homepage": "https://github.com/ahjuice/dashlane-json-to-csv#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.10.1",
+    "@types/sinon-chai": "^3.2.4",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "sinon": "^9.0.3",
+    "sinon-chai": "^3.5.0",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=14.10.1"
+  },
+  "dependencies": {
+    "@types/sinon": "^9.0.5"
+  }
+}
