@@ -1,19 +1,12 @@
-import readline = require("readline");
-import { validateFile } from "./readJson";
+import { validatePaths, validateFile } from "./modules/readJson";
 
-export function main(io: readline.Interface) {
-  io.question(
-    `Enter path to exported Dashlane JSON file, e.g. Users/me/dashlane.json: `,
-    (path) => {
-      // validateFile(path);
-      io.close();
-    }
-  );
+export function main() {
+  const args = process.argv.slice(2);
+  const { inputPath, outputPath } = validatePaths(args);
+  const data = validateFile(inputPath);
+  const keys = Object.keys(data);
+  console.log(keys);
+  console.log(outputPath);
 }
 
-main(
-  readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  })
-);
+main();
