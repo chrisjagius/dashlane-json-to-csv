@@ -1,8 +1,8 @@
 import * as chai from "chai";
+import * as path from "path";
+import * as sinonChai from "sinon-chai";
 import * as sinon from "ts-sinon";
-import { validatePaths, validateFile } from "../../src/modules/readJson";
-import sinonChai = require("sinon-chai");
-import path = require("path");
+import { validatePaths } from "../../src/modules/readJson";
 
 chai.use(sinonChai);
 

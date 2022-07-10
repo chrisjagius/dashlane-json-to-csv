@@ -19,6 +19,8 @@ export function validateFile(
   fsModule: typeof fs = fs
 ): object {
   const data = fsModule.readFileSync(filePath, "utf8");
+  // TODO: Add runtime checks and remove this exclusion
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const json: object = JSON.parse(data);
   Object.keys(json).forEach((key) => {
     if (!Object.keys(DashlaneTypeMap).includes(key)) {

@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "compile": "tsc --declaration",
-    "lint": "tslint --project tsconfig.json",
+    "lint": "eslint .",
     "prepare": "npm run compile",
     "test": "mocha",
     "coverage": "nyc -r text -e .ts -x \"tests/*.spec.ts\" npm run test"
@@ -14,13 +14,13 @@
   "directories": {
     "lib": "./lib",
     "src": "./src",
-    "test": "./src"
+    "test": "./test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahjuice/dashlane-json-to-csv.git"
   },
-  "author": "Christopher J. Agius <ahjuice@users.noreply.github.com> (https://chrisagi.us/)",
+  "author": "Christopher J. Agius <ahjuice@users.noreply.github.com> (https://chrisjagius.dev/)",
   "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/ahjuice/dashlane-json-to-csv/issues"
@@ -31,18 +31,23 @@
     "@types/mocha": "^8.0.3",
     "@types/node": "^14.10.1",
     "@types/sinon-chai": "^3.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "chai": "^4.2.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "mocha": "^8.1.3",
     "nyc": "^15.1.0",
     "sinon-chai": "^3.5.0",
     "ts-node": "^9.0.0",
     "ts-sinon": "^2.0.1",
     "tslib": "^2.0.1",
-    "tslint": "^6.1.3",
     "typescript": "^4.0.2"
   },
   "engines": {
-    "node": ">=14.10.1"
+    "node": ">=16.16.0"
   },
   "dependencies": {
     "@types/sinon": "^9.0.5"
