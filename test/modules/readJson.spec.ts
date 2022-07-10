@@ -15,6 +15,8 @@ describe("validatePaths", () => {
     const pathMock = sinon.stubObject(path, ["normalize"]);
     validatePaths(ioPathArrayMock, pathMock);
     chai
+      // TODO: look into this error
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       .expect(pathMock.normalize)
       .to.have.been.calledTwice.to.have.been.calledWithExactly(
         ioPathArrayMock[0]
